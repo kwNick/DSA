@@ -33,7 +33,7 @@ public class Solution{
         return last + slast;
     }
 
-    public int fib(int n) { //using Maths; O(logN) time
+    public int fib(int n) {             //using Maths; O(logN) time
         return (int) Math.round(Math.pow(1.6180339887, n)/Math.sqrt(5));
     }
 
