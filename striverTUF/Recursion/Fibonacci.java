@@ -33,6 +33,10 @@ public class Solution{
         return last + slast;
     }
 
+    public int fib(int n) { //using Maths; O(logN) time
+        return (int) Math.round(Math.pow(1.6180339887, n)/Math.sqrt(5));
+    }
+
     public static void main(String[] args){
         fib(5);
         rec_fib(5);
