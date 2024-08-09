@@ -16,9 +16,9 @@ class Sort{
 
     static void BubbleSort(int[] arr, int n){   //O(n^2) - best(n)
         for (int i = n - 1; i >= 0; i--) {
-            int didSwap = 0;
+            int didSwap = 0;        //swap checker
 
-            for (int j = 0; j <= i - 1; j++) {
+            for (int j = 0; j <= i - 1; j++) {  //checking swapping the maximum to the last window position
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -26,7 +26,7 @@ class Sort{
                     didSwap = 1;
                 }
             }
-            if (didSwap == 0) {
+            if (didSwap == 0) {     //if no swaps occured then the array is already in order
                 break;
             }
         }
