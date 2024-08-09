@@ -1,14 +1,14 @@
 class Sort{
     static void SelectionSort(int[] arr, int n){   //O(n^2)
         for (int i = 0; i < n - 1; i++) {
-            int mini = i;
+            int mini = i;   //starting minimum
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[mini]) {
+                if (arr[j] < arr[mini]) {   //checking the rest of the array for a new minimum
                     mini = j;
                 }
             }
             //swap
-            int temp = arr[mini];
+            int temp = arr[mini];   //swapping starting window w/ minimum
             arr[mini] = arr[i];
             arr[i] = temp;
         }
@@ -44,7 +44,7 @@ class Sort{
         }
     }
 
-    static void MergeSort(){        //Time:O(N*log_2N) space: O(N)
+    static void MergeSort(){        //Time:O(N*log_2(N)) space: O(N)
         public static void MSort(int[] arr, int low, int high){
             if(low >= high)
                 return;
