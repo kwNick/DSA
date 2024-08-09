@@ -1,4 +1,4 @@
-class Sort{
+public class Sort{
     static void SelectionSort(int[] arr, int n){   //O(n^2)
         for (int i = 0; i < n - 1; i++) {
             int mini = i;   //starting minimum
@@ -45,7 +45,8 @@ class Sort{
     }
 
     static void MergeSort(){        //Time:O(N*log_2(N)) space: O(N)
-        public static void MSort(int[] arr, int low, int high){
+
+        private static void MSort(int[] arr, int low, int high){
             if(low >= high) //base case for a single element which is sorted
                 return;
             int mid = (low+high)/2;
@@ -54,7 +55,7 @@ class Sort{
             Merge(arr, low, mid, high);
         }
 
-        public static void Merge(int[] arr, int low, int mid, int high){
+        private static void Merge(int[] arr, int low, int mid, int high){
             ArrayList<Integer> temp = new ArrayList<>(); // temporary array
             int left = low;      // starting index of left half of arr      //pointers to the beginning of each array
             int right = mid + 1;   // starting index of right half of arr
