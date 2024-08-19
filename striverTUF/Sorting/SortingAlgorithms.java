@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Sort{
-    static void SelectionSort(int[] arr, int n){   //O(n^2)
+    static void SelectionSort(int[] arr, int n){   //O(n^2)  Finding Minimum and swap w/ starting pointer
         for (int i = 0; i < n - 1; i++) {
             int mini = i;   //starting minimum
             for (int j = i + 1; j < n; j++) {
@@ -10,13 +10,13 @@ public class Sort{
                 }
             }
             //swap
-            int temp = arr[mini];   //swapping starting window w/ minimum
+            int temp = arr[mini];   //swapping starting pointer w/ minimum
             arr[mini] = arr[i];
             arr[i] = temp;
         }
     }
 
-    static void BubbleSort(int[] arr, int n){   //O(n^2) - best(n)
+    static void BubbleSort(int[] arr, int n){   //O(n^2) - best(n)   swapping the larger element to the last pointer
         for (int i = n - 1; i >= 0; i--) {
             int didSwap = 0;        //swap checker
 
@@ -34,7 +34,7 @@ public class Sort{
         }
     }
 
-    static void InsertionSort(int[] arr, int n){   //O(n^2) - best(n)
+    static void InsertionSort(int[] arr, int n){   //O(n^2) - best(n) each iteration it swaps the element until its in the right position
         for (int i = 0; i <= n - 1; i++) {   //could probly start at i=1 does nothing on the i=0 loop??
             int j = i;
             while (j > 0 && arr[j - 1] > arr[j]) {  //backtrack all the elements to find a swap
@@ -91,6 +91,7 @@ public class Sort{
             }
         }
     }
+    
     static void QuickSort(){        //Time:O(N*log_2(N)) space: O(1) not taking into account stack space
         private static int partition(List<Integer> arr, int low, int high) {
             int pivot = arr.get(low);
