@@ -25,6 +25,23 @@ public class Main {
         Node temp = new Node(val, head);
         return temp;
     }
+
+    public static Node deleteTail(Node head){
+        // Check if the linked list is empty or has only one node
+        if (head == null || head.next == null)
+            return null;
+        // Create a temporary pointer for traversal
+        Node temp = head;
+        // Traverse the list until the second-to-last node
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        // Nullify the connection from the second-to-last node to delete the last node
+        temp.next = null;
+        // Return the updated head of the linked list
+        return head;
+    }
+
     public static void main(String[] args) {
         // Sample array and value for insertion
         List<Integer> arr = Arrays.asList(12, 8, 5, 7);
@@ -39,6 +56,9 @@ public class Main {
         // Inserting a new node at the head of the linked list
         head = insertHead(head, val);
 
+        // Delete the tail of the linked list
+        head = deleteTail(head);
+        
         // Printing the linked list
         printLL(head);
     }
