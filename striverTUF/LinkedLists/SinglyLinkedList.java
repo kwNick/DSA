@@ -26,6 +26,7 @@ public class Main {
         return temp;
     }
 
+    //Function to delete a node at the tail of the linked list
     public static Node deleteTail(Node head){
         // Check if the linked list is empty or has only one node
         if (head == null || head.next == null)
@@ -40,6 +41,12 @@ public class Main {
         temp.next = null;
         // Return the updated head of the linked list
         return head;
+    }
+
+    //function to delete a node NOT at the tail of the linked list
+    public void deleteNode(Node node) { //and linkedList.length > 1
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
     public static void main(String[] args) {
