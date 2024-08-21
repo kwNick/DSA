@@ -14,7 +14,7 @@ public class Search{
 
     //Binary search is only applicable in a sorted search space. The sorted search space does not necessarily have to be a sorted array. It can be anything but the search space must be sorted.
     //In binary search, we generally divide the search space into two equal halves and then try to locate which half contains the target. According to that, we shrink the search space size.
-    public static int binarySearch(int[] nums, int target) {    //O(logN) Time Complexity 
+    public static int binarySearch(int[] nums, int target) {    //O(log(N)) Time Complexity 
         int n = nums.length; //size of the array.
         int low = 0, high = n - 1;
 
