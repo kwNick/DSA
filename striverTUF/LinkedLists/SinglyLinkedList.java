@@ -49,14 +49,31 @@ public class Main {
         node.next = node.next.next;
     }
 
+    // Function to calculate the length of a linked list
     public static int lengthOfList(Node head){ //O(N) time complexity
         int cnt = 0;
         Node tmp = head;
+        // Traverse the linked list and count nodes
         while(tmp != null){
             head = tmp.next;
-            cnt++;
+            cnt++;  // increment cnt for every node traversed
         }
         return cnt;
+    }
+
+    // Function to check if a given element is present in the linked list
+    public static boolean SearchVal(Node head, int val){ //time complexity: O(N) worst case, element is not found. O(1) best case, element is the first element. 
+        Node tmp = head;
+        
+        // Traverse the linked list
+        while(tmp != null){
+            // Check if the current node's data is equal to the desired element
+            if(tmp.val == val)
+                return true;
+            // Move to the next node
+            tmp = tmp.next;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -79,6 +96,9 @@ public class Main {
         // Print the length of the linked list
         System.out.println(lengthofList(head));
         
+        // Call the checkifPresent function and print the result
+        System.out.print(checkifPresent(head, 3));
+
         // Printing the linked list
         printLL(head);
     }
