@@ -21,12 +21,12 @@ public class Main {
         }
     }
     // Function to insert a new node at the head of the linked list
-    public static Node insertHead(Node head, int val) {
+    public static Node insertHead(Node head, int val) { //O(1) time complexity
         Node temp = new Node(val, head);
         return temp;
     }
 
-    //Function to delete a node at the tail of the linked list
+    //Function to delete a node at the tail of the linked list, only using a head Node
     public static Node deleteTail(Node head){
         // Check if the linked list is empty or has only one node
         if (head == null || head.next == null)
@@ -43,10 +43,20 @@ public class Main {
         return head;
     }
 
-    //function to delete a node NOT at the tail of the linked list
-    public void deleteNode(Node node) { //and linkedList.length > 1
+    //function to delete a node NOT at the tail of the linked list and linkedList.length > 1
+    public void deleteNode(Node node) { //O(1) time complexity
         node.val = node.next.val;
         node.next = node.next.next;
+    }
+
+    public static int lengthOfList(Node head){ //O(N) time complexity
+        int cnt = 0;
+        Node tmp = head;
+        while(tmp != null){
+            head = tmp.next;
+            cnt++;
+        }
+        return cnt;
     }
 
     public static void main(String[] args) {
@@ -65,6 +75,9 @@ public class Main {
 
         // Delete the tail of the linked list
         head = deleteTail(head);
+
+        // Print the length of the linked list
+        System.out.println(lengthofList(head));
         
         // Printing the linked list
         printLL(head);
