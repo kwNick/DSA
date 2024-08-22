@@ -27,7 +27,7 @@ public class Main {
     }
 
     //Function to delete a node at the tail of the linked list, only using a head Node
-    public static Node deleteTail(Node head){
+    public static Node deleteTail(Node head){ //O(N) time complexity for traversing to the tail
         // Check if the linked list is empty or has only one node
         if (head == null || head.next == null)
             return null;
