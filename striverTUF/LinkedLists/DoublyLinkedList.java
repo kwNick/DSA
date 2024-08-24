@@ -102,6 +102,48 @@ public class Node {
         return head;
     }
 
+    private static Node reverseDLL(Node head) { //O(N) time complexity, traverses the list
+        // Check if the list is empty
+        // or has only one node
+        if (head == null || head.next == null) {
+            // No change is needed;
+            // return the current head
+            return head; 
+        }
+        
+         // Initialize a pointer to
+         // the previous node        
+        Node prev = null;
+        
+        // Initialize a pointer to
+        // the current node
+        Node current = head;
+        
+        // Traverse the linked list
+        while (current != null) {
+            
+            // Store a reference to
+            // the previous node
+            prev = current.back;
+            
+            // Swap the previous and
+            // next pointers
+            current.back = current.next;
+            
+            // This step reverses the links
+            current.next = prev;
+            
+            // Move to the next node
+            // in the orignal list
+            
+            current = current.back;
+        }
+
+        // The final node in the original list
+        // becomes the new head after reversal
+        return prev.back;
+    }
+
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8, 4};
         // Convert the array to a doubly linked list
@@ -124,5 +166,9 @@ public class Node {
         head = deleteHead(head);
         print(head);
 
+
+        System.out.println("Doubly Linked List After Reversing :");
+        head = reverseDLL(head);
+        print(head);
     }
 }
