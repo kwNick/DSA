@@ -2,22 +2,22 @@ class stack { //O(N) time; O(N) space
     int size = 10000;
     int arr[] = new int[size];
     int top = -1;
-    void push(int x) {
+    void push(int x) {  //O(1)
         top++;
         arr[top] = x;
     }
 
-    int pop() {
+    int pop() { //O(1)
         int x = arr[top];
         top--;
         return x;
     }
 
-    int top() {
+    int top() { //O(1)
         return arr[top];
     }
 
-    int size() {
+    int size() {    //O(1)
         return top + 1;
     }
 
