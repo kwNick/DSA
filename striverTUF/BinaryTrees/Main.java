@@ -1,3 +1,4 @@
+
 // Importing required libraries
 import java.util.*;
 
@@ -6,10 +7,10 @@ import java.util.*;
 class TreeNode {
     // Value of the node
     int val;
-    
+
     // Pointer to the left child node
     TreeNode left;
-    
+
     // Pointer to the right child node
     TreeNode right;
 
@@ -76,13 +77,13 @@ public class Main {
         root.left.right = new TreeNode(4);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(10);
-        
+
         System.out.println("Binary Search Tree: ");
         printInOrder(root);
         System.out.println();
 
-        Solution solution = new Solution();
-        
+        FibonacciSeries solution = new FibonacciSeries();
+
         // Searching for a value in the BST
         int target = 6;
         TreeNode result = solution.searchBST(root, target);
@@ -95,4 +96,3 @@ public class Main {
         }
     }
 }
-     
